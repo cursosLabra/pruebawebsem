@@ -1,5 +1,5 @@
 prefix :       <http://example.org/>
-prefix schema: <http://schema.org/>
+prefix schema: <https://schema.org/>
 prefix dbr:    <http://dbpedia.org/resource/>
 
 :bob   schema:birthPlace dbr:Oviedo .
