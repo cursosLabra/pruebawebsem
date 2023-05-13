@@ -1,0 +1,6 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>
+
+:bob   schema:birthPlace dbr:Oviedo .
+:carol schema:birthPlace dbr:Oviedo .

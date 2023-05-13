@@ -1,0 +1,7 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+
+:alice schema:knows :bob .
+:bob   schema:knows :carol .
+:carol schema:knows :bob .
+:carol schema:knows :alice .
