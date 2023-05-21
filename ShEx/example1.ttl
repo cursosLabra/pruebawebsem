@@ -1,0 +1,25 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/> 
+prefix xsd:    <http://www.w3.org/2001/XMLSchema#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+
+:alice schema:name  "Alice" ;
+       schema:knows :alice  .
+
+:bob   schema:knows :alice ;
+       schema:name  "Robert".
+
+:carol schema:name   "Carol", "Carole" .
+
+:dave  schema:name   234 .
+
+:emily foaf:name     "Emily" .
+
+:frank schema:name "Frank" ;
+       schema:email <mailto:frank@example.org> ;
+       schema:knows :alice, :bob .
+
+:grace schema:name "Grace" ;
+       schema:knows :alice, _:1 .
+
+_:1 schema:name  "Unknown" .
