@@ -11,7 +11,7 @@ Original file is located at
 En esta sección, se va a introducir RDF. Para ello, se requiere instalar la  librería [rdflib](https://rdflib.readthedocs.io/).
 """
 
-!pip install rdflib
+# !pip install rdflib
 
 """A partir de ahí, se pueden crear grafos importando las clases correspondientes de rdflib."""
 

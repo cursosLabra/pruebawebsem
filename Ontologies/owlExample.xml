@@ -1,0 +1,58 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://example.org#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://example.org"/>
+  <owl:Class rdf:about="http://example.org#Person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://example.org#hasParent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://example.org#Female"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://example.org#hasParent"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://example.org#Male"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://example.org#hasParent"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org#Female">
+    <owl:disjointWith rdf:resource="http://example.org#Male"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org#alice">
+    <rdf:type rdf:resource="http://example.org#Person"/>
+    <hasParent>
+      <owl:NamedIndividual rdf:about="http://example.org#bob">
+        <rdf:type rdf:resource="http://example.org#Person"/>
+      </owl:NamedIndividual>
+    </hasParent>
+    <hasParent>
+      <owl:NamedIndividual rdf:about="http://example.org#carol">
+        <rdf:type rdf:resource="http://example.org#Female"/>
+        <rdf:type rdf:resource="http://example.org#Person"/>
+      </owl:NamedIndividual>
+    </hasParent>
+  </owl:NamedIndividual>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:about="http://example.org#bob"/>
+      <owl:NamedIndividual rdf:about="http://example.org#carol"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+</rdf:RDF>

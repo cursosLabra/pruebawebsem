@@ -1,0 +1,12 @@
+@prefix dc:  <http://purl.org/dc/terms/> .
+@prefix uni: <http://uniovi.es/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+uni:biologia  dc:creator  uni:juan .
+uni:biologia  dc:creator  uni:ana .
+uni:quimica   dc:creator  uni:ana .
+uni:quimica   dc:creator  uni:luis .
+uni:derecho   dc:creator  uni:luis .
+uni:ana       rdf:type    uni:Profesor .
+uni:juan      rdf:type    uni:Profesor .
+uni:luis      rdf:type    uni:Becario .
